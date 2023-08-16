@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&family=Noto+Kufi+Arabic&family=Noto+Naskh+Arabic:wght@600&display=swap');
+/* Start global rules  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.container {
+    width: 95%;
+    padding: 10px 15px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    /* height: 100vh; */
+    background-color: #eee;
+    overflow: hidden;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+nav::-webkit-scrollbar,
+#suratNameList::-webkit-scrollbar,
+#tafseer .boxs .box .content::-webkit-scrollbar,
+#lectures::-webkit-scrollbar,
+#bookmarks::-webkit-scrollbar {
+    width: 5px;
+    background-color: #eee;
+    border-top-right-radius: 10px;
+}
+
+nav::-webkit-scrollbar-thumb,
+#suratNameList::-webkit-scrollbar-thumb,
+#tafseer .boxs .box .content::-webkit-scrollbar-thumb,
+#lectures::-webkit-scrollbar-thumb,
+#bookmarks::-webkit-scrollbar-thumb {
+    border-top-right-radius: 10px;
+    background-color: #439feb;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    gap: 10px;
+    padding: 10px;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: .4s;
+    position: relative;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+ul li::before,
+#mainsec #suratNameList div::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: #439feb;
+    border-radius: 15px;
+    transition: .4s;
+    z-index: -1;
+}
+
+
+ul li:hover::before,
+#mainsec #suratNameList div:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+#mainsec #mainContent nav div ul li span {
+    z-index: 2;
+    font-size: 20px;
+}
+
+ul li i svg {
+    fill: #439feb;
+    transition: .4s;
+}
+
+ul li:hover i svg {
+    fill: var(--com-color);
+}
+
+.prev {
+    position: absolute;
+    height: 30px;
+    left: 20px;
+    top: calc(50% - 15px);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev svg {
+    fill: #439feb;
+    transform: scale(1.3);
+}
+
+
+:root {
+    --main-color: #439feb;
+    --bg-color: #eee;
+    --com-color: #fff;
+}
+
+/* End global rules  */
+
+/* Start header  */
+header {
+    background-color: var(--com-color);
+    /* border-bottom: 2px solid var(--main-color); */
+    height: 70px;
+    background-color: #fff;
+}
+
+header .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header .row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+header .row .logoText {
+    font-size: 35px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+}
+
+header .row .logoText img {
+    max-width: 100%;
+    height: 50px;
+    user-select: none;
+}
+
+header .row p {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+header .row .image {
+    width: 50px;
+    height: 50px;
+
+}
+
+header .row:nth-child(2) {
+    justify-content: flex-end;
+    padding: 7px;
+    /* background-color: var(--bg-color); */
+    border-radius: 10px;
+}
+
+header .row:nth-child(2) .image {
+    width: 40px;
+    height: 40px;
+}
+
+header .row:nth-child(2) .image img {
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+}
+
+
+header ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    width: 60%;
+    height: 100%;
+}
+
+
+
+nav ul li span {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+/* End header  */
+
+
+/* Start main section  */
+#mainsec {
+    width: 100%;
+    height: calc(100% - 70px);
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    /* background-image: url('../images/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    position: relative;
+}
+
+
+#mainsec>nav {
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    /* border-left: 2px solid var(--main-color); */
+}
+
+#mainsec nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+}
+
+
+#mainsec #mainContent {
+    background-color: #eee;
+    width: calc(100% - 310px);
+    height: calc(100% - 10px);
+    /* border: 2px solid var(--main-color); */
+    border-radius: 10px;
+    position: relative;
+    left: 5px;
+    top: 5px;
+}
+
+#mainsec #mainContent .welcome {
+    color: var(--main-color);
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    padding: 10px;
+
+}
+
+#mainsec #suratNameList div {
+    background-color: var(--bg-color);
+    padding: 10px;
+    width: 92%;
+    border-radius: 10px;
+    text-align: right;
+    cursor: pointer;
+    transition: .4s;
+    z-index: 1;
+    position: relative;
+}
+
+#mainConte .welcome {
+    position: relative;
+    color: var(--main-color);
+}
+
+#quran,
+#dContent,
+#suratNameList,
+#tafseer,
+#lectures,
+#bookmarks,
+#home,
+#study,
+#listen,
+#books {
+    border-radius: 10px;
+    /* font-family: 'Noto Naskh Arabic', serif;  */
+    overflow-y: auto;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: 100%;
+    height: 100%;
+    border-radius: 10px;
+    direction: rtl;
+    padding: 10px;
+    font-size: 21px;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* transform: scale(0); */
+}
+
+
+#home {
+    /* justify-content: space-between; */
+    justify-content: center;
+}
+
+#home h1 {
+    color: var(--main-color);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+#home .box {
+    font-family: 'Noto Naskh Arabic', serif;
+    /* height: 100%; */
+    text-align: justify;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+#home footer {
+    color: var(--main-color);
+    padding-top: 10px;
+}
+
+#quran {
+    text-align: justify;
+    scroll-behavior: smooth;
+}
+
+#dContent {
+    /* background-color: red; */
+}
+
+#tafseer {
+    transform: scale(1);
+    z-index: 11;
+}
+
+.selection {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px 10px;
+    border-bottom: 2px solid var(--main-color);
+    display: flex;
+    /* flex-direction: column; */
+    position: relative;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.selection .box {
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: 'Noto Naskh Arabic', serif;
+    width: 100%;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection select {
+    display: flex;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    border: unset;
+}
+
+.selection select option {
+    background-color: #eee;
+    width: 500px !important;
+    border: unset;
+    display: flex;
+    font-family: 'Noto Naskh Arabic', serif;
+
+}
+
+.boxs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* height: 100%; */
+    width: 100%;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    direction: rtl;
+    /* height: 100%; */
+    position: relative;
+    gap: 17.5px;
+    border-bottom: 2px solid var(--main-color);
+    font-family: 'Noto Naskh Arabic', serif;
+
+}
+
+.box a {
+    color: #333;
+    text-align: center;
+    text-decoration: none;
+    transition: .3s;
+    width: fit-content;
+}
+
+.box a:hover {
+    transform: scale(1.2);
+    color: var(--main-color);
+}
+
+#study .selection {
+    flex-direction: column;
+}
+
+#study .selection .box {
+    flex-direction: row;
+}
+
+#study  > .box{
+    display: inline;
+}
+
+#study .selection .box .subBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#study .selection .box .subBox input{
+    height: 30px;
+    background-color: var(--com-color);
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+    padding: 15px 10px;
+    font-size: 18px;
+    width: 100%;
+}
+
+#study .selection button{
+    border: none;
+    padding: 7px 35px;
+    background-color: var(--main-color);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#study .selection .playAndBuse{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    width: 40px;
+    height: 40px;
+    padding: unset;
+    border-radius: 50%;
+}
+
+#study .selection .playAndBuse svg{
+    fill: #fff;
+    transform: scale(.9);
+}
+
+#study .selection .box .subBox input:focus{
+    border-bottom:2px solid var(--main-color);
+}
+
+
+#tafseer .boxs .box .ayah {
+    background-color: #eee;
+    line-height: 1.6;
+    padding: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#tafseer .boxs .box .content {
+    line-height: 1.6;
+    font-weight: bold;
+    direction: ltr;
+    text-align: right;
+    padding: 0px 10px;
+    /* border-right: #439feb solid 2px; */
+}
+
+#lectures .boxs .box iframe {
+    width: 100%;
+    height: 350px;
+}
+
+#tafseer .arrows,
+#lectures .arrows {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border-bottom: 2px solid var(--main-color);
+}
+
+#tafseer .arrows .content,
+#lectures .arrows .content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#tafseer .arrows .content button,
+#lectures .arrows .content button {
+    position: relative;
+    background-color: #439feb;
+    border: none;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: #439feb -1px -1px 1px 1px inset;
+    -webkit-tap-highlight-color: #ffffff09;
+}
+
+.click {
+    animation: click .2s linear;
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#tafseer .arrows .content button svg,
+#lectures .arrows .content button svg {
+    fill: #fff;
+    z-index: 1;
+}
+
+#mainsec #suratNameList {
+    background-color: #fff;
+    direction: ltr;
+    z-index: 11;
+    transition: .3s;
+}
+
+#mainsec #suratNameList div {
+    font-weight: bold;
+}
+
+#quran.show,
+#dContent.show,
+#suratNameList.show,
+#tafseer.show {
+    transform: scale(1);
+    transition: .3s;
+}
+
+#quran::-webkit-scrollbar,
+#dContent::-webkit-scrollbar,
+#tafseer::-webkit-scrollbar {
+    width: 0;
+}
+
+
+#quran #page {
+    line-height: 2.2;
+    margin-top: 10px;
+    scroll-behavior: smooth;
+}
+
+
+#quran #page>span.selected {
+    background-color: #ccc;
+    padding: 10px 0;
+}
+
+#quran>div>span {
+    margin-left: 10px;
+    user-select: none;
+    font-weight: bold;
+    font-family: 'Noto Naskh Arabic', serif;
+}
+
+#quran #basmala {
+    color: var(--main-color);
+    text-shadow: 1px 1px 1px;
+}
+
+.suranum {
+    width: 30px;
+    height: 30px;
+    border: var(--main-color) 2px solid;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+#bookmarks {
+    direction: ltr;
+}
+
+#bookmarks .box {
+    cursor: pointer;
+}
+
+#bookmarks .box .suraName {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#bookmarks .box .content .text {
+    line-height: 1.8;
+    font-weight: bold;
+    text-align: justify;
+}
+
+#bookmarks .box .bookmarkIcon {
+    fill: #439feb;
+    position: absolute;
+    left: 10px;
+}
+
+#bookmarks .box .xMark {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    left: 0;
+    left: calc(-100% + 25px);
+}
+
+#bookmarks .box .xMark svg {
+    fill: red;
+}
+
+#popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    align-items: center;
+    background-color: #eee;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+    transform: scale(0);
+    z-index: 10;
+    transition: .3s;
+}
+
+#popup.show {
+    transform: scale(1) !important;
+}
+
+.line {
+    background-color: #aaa;
+    height: 25px;
+    width: 2px;
+}
+
+#popup .svgContainer {
+    display: flex;
+    align-items: center;
+}
+
+#popup svg {
+    fill: #439feb;
+    cursor: pointer;
+}
+
+#notfication {
+    position: fixed;
+    top: 15px;
+    right: 5px;
+    padding: 10px;
+    border-right: 2px solid #439feb;
+    background-color: #eee;
+    font-size: 19px;
+    z-index: 11;
+    font-weight: bold;
+    transition: .3s;
+    transform: scale(0);
+}
+
+#notfication.show {
+    transform: scale(1);
+
+}
