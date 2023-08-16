@@ -121,6 +121,7 @@ export default {
             const globalAhyahNum = await res.res.data.number;
             localState.value.ahyahText = `<span>${res.res.data.text}</span><span class="suranum">${res.res.data.numberInSurah}</span>`
             const src = await get(`${urls.ayahEndpoint}/${globalAhyahNum}/${modelsState.value.readerName}`);
+            localStorage.setItem('readerName' , modelsState.value.readerName);
             if (src.code == 200) {
                 audio.src = src.data.audio;
                 playAudio();

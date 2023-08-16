@@ -6,7 +6,7 @@
         </div>  
 </template>
 <script>
-import { $, $a, get } from '../modules/cocktail.js';
+import { $, $a, addClickClass, get } from '../modules/cocktail.js';
 import urls from '../modules/urls.js';
 import iconC from '../modules/icons.js';
 import { useStore } from 'vuex';
@@ -19,8 +19,10 @@ export default {
         const audio = new Audio();
         const icons = iconC;
 
-        const playAudio = async () => {
-            const src = (await get(`${urls.ayahEndpoint}/${store.state.currentAhyahNum}/ar.alafasy`));
+        const playAudio = async (e) => {
+            const readerName = localStorage.getItem('readerName') || 'ar.alafasy';
+            addClickClass(e);
+            const src = (await get(`${urls.ayahEndpoint}/${store.state.currentAhyahNum}/${readerName}`));
             audio.src = src.data.audio
             audio.load();
             audio.play();
