@@ -1,7 +1,7 @@
 <template lang="">
    <div id="popup">
-            <div @click="showTafseer" v-html="icons.openBook"></div>
-            <div class="line"></div>
+            <!-- <div @click="showTafseer" v-html="icons.openBook"></div>
+            <div class="line"></div> -->
             <div @click="playAudio" v-html="icons.play"></div>
         </div>  
 </template>
