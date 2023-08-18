@@ -12,7 +12,3 @@ import { get, makeAppResponsive } from './modules/cocktail';
 const app = createApp(appVue);
 makeAppResponsive('body')
 app.use(store).use(router).mount('#app')
-// console.log(await get(`https://proxy-tafseer.cyclic.cloud/getTafseer/1/1/1`));
-//recommmends websites//
-//https://www.albitaqat.com/
-//https://proxy-tafseer.cyclic.cloud/getTafseer/1/1/1

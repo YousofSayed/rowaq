@@ -104,7 +104,6 @@ const store = createStore({
             try {
                 const { currentSuraNum, currentAhyahNumInSurah, currentAhyahNum, tafseerId } = store.state
                 const tafseerOfAhyahData = await get(`${urls.tafseerEndpoint}/${tafseerId}/${currentSuraNum}/${currentAhyahNumInSurah}`);
-                console.log(tafseerOfAhyahData);
                 const getAhyah = await get(`${urls.ayahEndpoint}/${currentAhyahNum}`)
                 store.commit('setTafseerOfAhyah', tafseerOfAhyahData.text)
                 store.commit('setCurrentSuraName', getAhyah.data.surah.name)
