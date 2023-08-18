@@ -739,7 +739,12 @@ export async function post(api = "string", headers = { 'content-type': 'Applicat
 }
 
 export async function get(api, headers, resType = 'json') {
-  return await (await (await fetch(api, { method: 'GET', headers: headers }))[resType]());
+  try {
+    return await (await (await fetch(api, { method: 'GET', headers: headers }))[resType]());
+    
+  } catch (error) {
+    throw new Error(error.message)
+  }
 }
 
 export async function put(api, headers, data) {
