@@ -440,7 +440,7 @@ nav ul li span {
     gap: 17.5px;
     border-bottom: 2px solid var(--main-color);
     font-family: 'Noto Naskh Arabic', serif;
-
+    line-height: 1.7;
 }
 
 .box a {
