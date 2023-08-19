@@ -4,10 +4,12 @@
     }
 
     #mainsec>nav {
-        width: 50px;
+        width: 60px;
         background-color: #fff;
         border-top: none;
-
+        display: flex;
+        justify-content: center;
+        /* padding: 15px; */
     }
 
     #mainsec>nav ul {
@@ -15,7 +17,7 @@
         justify-content: center;
         flex-direction: column;
         gap: 20px;
-        padding: 15px;
+        padding: unset;
         align-items: center;
     }
 
